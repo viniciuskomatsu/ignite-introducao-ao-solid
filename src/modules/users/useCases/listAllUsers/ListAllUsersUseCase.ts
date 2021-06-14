@@ -13,13 +13,13 @@ class ListAllUsersUseCase {
     let users: User[] = [];
 
     if (!user) {
-      throw new Error("Mensagem do erro");
+      throw new Error("User not found");
     }
 
     if (user.admin) {
       users = this.usersRepository.list();
     } else {
-      throw new Error("Mensagem do erro");
+      throw new Error("You need to be an administrator");
     }
 
     return users;

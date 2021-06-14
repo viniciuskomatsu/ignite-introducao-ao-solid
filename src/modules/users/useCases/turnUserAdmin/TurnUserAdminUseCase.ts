@@ -15,7 +15,7 @@ class TurnUserAdminUseCase {
     if (user_temp) {
       user = this.usersRepository.turnAdmin(user_temp);
     } else {
-      throw new Error("Mensagem do erro");
+      throw new Error("User not found");
     }
 
     return user;
